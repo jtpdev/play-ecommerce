@@ -1,0 +1,89 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<base href="/">
+        @* Here's where we render the page title `String`. *@
+        <title>@title</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body ng-app="lucy">
+     <script src="@routes.Assets.versioned("javascripts/angular-1.6.6.min.js")" type="text/javascript"></script>
+     <script src="@routes.Assets.versioned("javascripts/angular-animate.js")" type="text/javascript"></script>
+     <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+	 <script src="@routes.Assets.versioned("javascripts/infinite-scroll.js")"></script>
+	 <script src="@routes.Assets.versioned("javascripts/jquery-2.1.4.min.js")"></script>
+	 <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+	 <script src="@routes.Assets.versioned("javascripts/jquery.mask.js")"></script>
+
+
+
+	<div id="header" ng-controller="HeaderController">
+			<div id="logo" class="col-sm-2 col-xs-12 col-lg-3 col-xg-2" align="center">
+				<a target="_self" href="@routes.HomeController.index()"><img
+					src="@routes.Assets.versioned("images/logo.png")" /></a>
+			</div>
+			<div class="category-button">
+				<button class="btn-header" id="btn-category" ng-click="toggleCustom()">
+						Categories
+				</button>
+			</div>
+			<div  id="categories" class="col-sm-6 col-xs-12 col-lg-5 col-xg-7"
+				align="center" >
+					<div class="category col-sm-3 col-xs-12 col-lg-3 col-xg-3" ng-repeat="category in categories" ng-hide="custom">
+							<a class="btn-a" target="_self" href="category/{{category.id}}">
+						<button type="button" class="btn-header">
+								{{category.name}}
+						</button>
+							</a>
+					</div>
+			</div>
+			
+			<div id="cart" class="col-sm-4 col-xs-12 col-lg-4 col-xg-3">
+				<a class="btn-a" target="_self" href="/cart">
+					<button type="button" class="btn-header" >
+							<img src="@routes.Assets.versioned("images/bag.png")" id="img-value"/> 
+							 {{total | currency}}
+					</button>
+				</a>
+			</div>
+			<div class="user col-sm-3 col-xs-12 col-lg-4 col-xg-2" align="center">
+				Welcome! <a target="_self" href="{{loginuri}}">{{logged}}</a>
+			</div>
+		</div>
+
+
+	@* And here's where we render the `Html` object containing * the page
+	content. *@ @content
+
+
+
+	<div class="footer col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+		<div id="connection">
+			<div id="connect">Connect us</div>
+			<a href="#"> <img src="@routes.Assets.versioned("images/face-icon.png")" />
+			</a> <a href="#"> <img src="@routes.Assets.versioned("images/insta-icon.png")"
+				/>
+			</a> <a href="#"> <img src="@routes.Assets.versioned("images/whatsapp-icon.png")"
+				/>
+			</a>
+		</div>
+	</div>
+	<div id="dev" align="center">
+		<p>
+			Developed by <a href="https://github.com/jtpdev">Jimmy Porto</a>
+		</p>
+	</div>
+</body>
+</html>

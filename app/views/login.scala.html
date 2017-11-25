@@ -1,0 +1,42 @@
+@()
+
+@main("Login | Wine") {
+
+<div class="form-login col-sm-12 col-xs-12 col-lg-12 col-xg-12" ng-controller="UserController">
+		<div id="login-message">
+			{{loginmessage}}
+		</div>
+		<h2>Login:</h2>
+		<form ng-submit="doLogin()">
+				<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+					<div class="col-sm-6 col-xs-12 col-lg-6 col-xg-6">
+						<label	for="email">
+							Login (email):
+						</label>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-lg-6 col-xg-6">
+						<input id="email" class="required"
+							type="text" name="user.email" value="{{user.email}}" />
+					</div>
+				</div>
+				<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+					<div class="col-sm-6 col-xs-12 col-lg-6 col-xg-6">
+						<label for="password">
+							Password:
+						</label>
+					</div>
+					<div class="col-sm-6 col-xs-12 col-lg-6 col-xg-6">
+						<input id="password" class="required"
+							type="password" name="user.password" value="{{user.password}}"/>
+					</div>
+				</div>
+				<button type="submit">Login</button>
+		</form>
+		<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+			<a target="_self" href="/user/{{uri}}">Create an account!</a>
+		</div>
+	</div>
+
+
+
+}

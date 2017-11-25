@@ -1,0 +1,76 @@
+@()
+
+@main("Cart | Wine") {
+
+<div class="products-on-cart" align="center" ng-controller="CartController">
+		<div class="product-on-cart col-sm-12 col-xs-12 col-lg-12 col-xg-12" ng-repeat="productCart in products">
+			<div
+				class="image-product-on-cart col-sm-2 col-xs-12 col-lg-2 col-xg-2">
+				<a href="/product/{{productCart.product.id}}">
+					<img src="@routes.Assets.versioned("images/product/{{productCart.product.id}}.jpg")" />
+				</a>
+			</div>
+			<div class="name-product-on-cart col-sm-5 col-lg-5 col-xg-5">
+				<h4>{{productCart.product.name}}</h4>
+			</div>
+			<div class="qtd-product-on-cart col-sm-3 col-xs-12 col-lg-3 col-xg-3">
+				<input type="text" ng-model="productCart.quantity" value="{{productCart.quantity}}" ng-change="addQuantity($index, productCart.quantity)"/> 
+				<button type="button" ng-click="add($index)"
+					class="plus-product-on-cart">+</button>
+				<button type="button"ng-click="remove($index)"
+					class="sub-product-on-cart">-</button>
+				<button type="button" ng-click="removeAll($index)"
+					class="remove-product-on-cart">
+					<img 
+						src="@routes.Assets.versioned("images/remove_all.png")" />
+				</button>
+			</div>
+			<div
+				class="value-product-on-cart col-sm-2 col-xs-2 col-lg-2 col-xg-2">
+				{{productCart.value | currency}}
+			</div>
+		</div>
+		
+		
+	<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+		<h4>Total</h4>
+	</div>
+	<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+			<div class="cart-subtotal col-sm-2 col-xs-12 col-lg-4 col-xg-2">
+					{{subTotal | currency}}
+			</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+			<div class="shipping-total col-sm-2 col-xs-12 col-lg-4 col-xg-2">
+					{{shippingValue | currency}}
+			</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+			<div class="cart-total col-sm-2 col-xs-12 col-lg-4 col-xg-2">
+					{{total | currency}}
+			</div>
+	</div>
+		
+	<div class="shipping-methods col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+		<h4>Shipping Method(s)</h4>
+	</div>
+		<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12" ng-repeat="shipping in shippings">
+			<div class="shipping col-sm-8 col-xs-12 col-lg-12 col-xg-8">
+				<label>
+						<input type="radio" ng-model="cart.shipping.id" value="{{shipping.id}}" ng-checked="cart.shipping.id == shipping.id"> {{shipping.name}} - {{shipping.description}}<br>
+				</label>
+			</div>
+		</div>
+	<div class="col-sm-12 col-xs-12 col-lg-12 col-xg-12">
+		<div class="checkout col-sm-4 col-xs-12 col-lg-4 col-xg-4">
+				<button class="btn-add-product" type="button"
+					onclick="#"
+					class="checkout-button">
+					Checkout now!
+				</button>
+		</div>
+	</div>
+</div>
+
+
+}

@@ -1,0 +1,22 @@
+@()
+
+@main("Wine") {
+	<div class="container" id="infinite"
+	data-infinite-scroll='{ "path": ".pagination__next", "append": ".post", "history": false }' ng-controller="CategoryController">
+		<div class="product col-lg-4 col-md-4 col-sm-6 col-xs-6 post" ng-repeat="product in products">
+			<div class="product-caption">
+				<div class="product-img" align="center">
+					<a href="/product/{{product.id}}"> <img src="@routes.Assets.versioned("images/product/{{product.id}}.jpg")" />
+					</a>
+				</div>
+				<div class="description">
+					<h4>{{product.name}}</h4>
+					<p ng-bind-html="values(product.price, product.special)">
+						
+					</p>
+				</div>
+				<button ng-click="toCart(product.id)" class="btn-add-product">Buy it!</button>
+			</div>
+		</div>
+</div>
+}

@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                                   controllers.HomeController.index
+GET     /categories                         controllers.HeaderController.categories
+GET     /specials                           controllers.ProductController.specials
+GET     /products                           controllers.CategoryController.products
+GET     /logged                             controllers.UserController.logged
+GET     /cart                               controllers.CartController.cart
+GET     /sale                               controllers.CartController.products
+GET     /cart/total                         controllers.CartController.cartTotal
+GET     /shipping                           controllers.ShippingController.shippingMethods
+                                            
+GET     /cart/add/:product_id               controllers.CartController.add(product_id: Long)
+GET     /cart/plus/:product_id              controllers.CartController.plus(product_id: Long)
+GET     /cart/:product_id/add/:qtd          controllers.CartController.addQtd(product_id: Long, qtd: Long)
+GET     /cart/remove/:product_id            controllers.CartController.remove(product_id: Long)
+GET     /cart/removeall/:product_id         controllers.CartController.removeAll(product_id: Long)
+GET     /shipping/add/:shipping_id          controllers.CartController.addShipping(shipping_id: Long)
+GET     /category/:category_id              controllers.CategoryController.category(category_id: Long)
+GET     /product/:product_id                controllers.ProductController.product(product_id: Long)
+GET     /login/:uri                         controllers.UserController.login(uri: String)
+GET     /user/:uri                          controllers.UserController.user(uri: String)
+GET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)
+GET     /adduser/:user                      controllers.UserController.addUser(user: vos.UserVO)
+GET     /logeduser                          controllers.UserController.logedUser
+GET     /uri                                controllers.UserController.uri
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)

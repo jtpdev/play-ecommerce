@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: No URL path binder found for type vos.UserVO. Try to implement an implicit PathBindable for this type.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: not enough arguments for method implicitly: (implicit e: play.api.mvc.PathBindable[vos.UserVO])play.api.mvc.PathBindable[vos.UserVO].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter e.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: No URL path binder found for type vos.UserVO. Try to implement an implicit PathBindable for this type.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: not enough arguments for method implicitly: (implicit e: play.api.mvc.PathBindable[vos.UserVO])play.api.mvc.PathBindable[vos.UserVO].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter e.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: No URL path binder found for type vos.UserVO. Try to implement an implicit PathBindable for this type.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\User\Documents\projetos\ecommerce-play\conf\routes:25:1: not enough arguments for method fromPath: (implicit binder: play.api.mvc.PathBindable[vos.UserVO])play.core.routing.Param[vos.UserVO].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter binder.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /dologin/:user                      controllers.UserController.doLogin(user: vos.UserVO)[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
